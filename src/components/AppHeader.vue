@@ -20,7 +20,7 @@
     </div>
     <div class="header-nav">
       <ul class="header-list">
-        <router-link to="">Shahzod</router-link>
+        <router-link to="">Mac</router-link>
         <router-link to="">iPhone</router-link>
         <router-link to="">iPad</router-link>
         <router-link to="">Watch</router-link>
