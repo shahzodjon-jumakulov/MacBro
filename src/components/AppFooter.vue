@@ -18,11 +18,9 @@
         <ul class="footer-nav-item">
           <h3 class="title">Ma'lumot</h3>
           <li>Siz uchun sotib beramiz!</li>
-          <li>Muddatli to'lov</li>
           <li>Yetkazib berish</li>
           <li>Aloqa</li>
           <li>Taklif bildirish</li>
-          <li>Siz taklif qilinasiz</li>
           <li>eSim haqida</li>
         </ul>
         <ul class="footer-nav-item">
@@ -114,9 +112,9 @@
               </svg>
             </a>
           </li>
-          <li class="social-link">
+          <p class="social-link">
             +998 78 777 20 20
-          </li>
+          </p>
         </ul>
       </div>
       <div class="footer-copyright">
@@ -157,10 +155,15 @@
 .footer-nav-item li {
   color: #515154;
   margin: 10px 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 18px;
   font-family: "San-Francisco", sans-serif;
+  cursor: pointer;
+}
+
+.footer-nav-item li:hover {
+  color: #1d1d1f;
 }
 
 ul {
@@ -173,6 +176,10 @@ ul {
   font-family: "San-Francisco", sans-serif;
   font-weight: 600;
   line-height: 18px;
+}
+
+p.social-link {
+  color: #515154;
 }
 
 .social-link {
@@ -201,5 +208,9 @@ ul {
 .author-link {
   color: #06c;
   text-decoration: none;
+}
+
+.author-link:hover {
+  color: #1d1d1f;
 }
 </style>

@@ -1,92 +1,88 @@
 <template>
   <div class="hero-wrapper">
     <div class="container">
-      <div class="slider">
-        <ul class="slider-indicator">
-          <li
-            v-for="indicator in slides"
-            :key="indicator.key"
-            class="slider-indicator-item"
-            :class="indicator.main ? 'active' : null"
-          ></li>
-        </ul>
-        <div class="slider-inner">
-          <div
-            v-for="slide in slides"
-            :key="slide.key"
-            class="slider-item"
-            :class="slide.main ? 'active' : null"
-          >
-            <div class="slider-item-container">
-              <div class="slider-wrapper">
-                <p class="hero-new">Yangi</p>
-                <h2 class="hero-title">{{ slide.title }}</h2>
-                <p class="hero-desc">{{ slide.desc }}</p>
-                <router-link to="" class="hero-link">Sotib olish</router-link>
-              </div>
-              <div class="hero-background">
-                <video autoplay loop playsinline muted>
-                  <source :src="slide.src" type="video/mp4" />
-                  <source :src="slide.src" type="video/webm" />
-                </video>
-              </div>
+      <Carousel class="slider-inner" :wrapAround="true" :transition="600">
+        <Slide v-for="slide in slides" :key="slide.key" class="slider-item">
+          <div class="slider-item-container">
+            <div class="slider-wrapper">
+              <p class="hero-new">Yangi</p>
+              <h2 class="hero-title">{{ slide.title }}</h2>
+              <p class="hero-desc">{{ slide.desc }}</p>
+              <router-link to="" class="hero-link">Sotib olish</router-link>
+            </div>
+            <div class="hero-background">
+              <video autoplay loop playsinline muted>
+                <source :src="slide.src" type="video/mp4" />
+                <source :src="slide.src" type="video/webm" />
+              </video>
             </div>
           </div>
-        </div>
-        <div class="slider-prev">
-          <div class="slider-prev-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="#fff"
-              width="20"
-              height="20"
-              viewBox="0 0 8 8"
-            >
-              <path d="M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z" />
-            </svg>
-          </div>
-        </div>
-        <div class="slider-next">
-          <div class="slider-next-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="#fff"
-              width="20"
-              height="20"
-              viewBox="0 0 8 8"
-            >
-              <path d="M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z" />
-            </svg>
-          </div>
-        </div>
-      </div>
+        </Slide>
+        <template #addons>
+          <Navigation />
+          <Pagination />
+        </template>
+      </Carousel>
     </div>
   </div>
 </template>
 
 <script>
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+
 export default {
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+  },
   data() {
     return {
-      isActive: 0,
       slides: [
         {
           title: "Apple Watch Ultra",
           desc: "Eng takomillashtirilgan Apple Watch.",
           src: "https://cdn.macbro.uz/macbro/5ab93411-fa15-4363-bfc2-7a1a292d3e6e",
-          main: true,
         },
         {
           title: "iPhone 14 and iPhone 14 Plus",
           desc: "",
           src: "https://cdn.macbro.uz/macbro/c9baf95c-dfa0-42fc-aaf8-3ab1090ba371",
-          main: false,
+        },
+        {
+          title: "iPhone 14 Pro",
+          desc: "Chegaralarni kengaytirib.",
+          src: "https://cdn.macbro.uz/macbro/bee39e41-3e48-43ae-a16a-f3a4ed4f61ed",
+        },
+        {
+          title: "AirPods Pro 2",
+          desc: "",
+          src: "https://cdn.macbro.uz/macbro/e2fcb36a-d08c-4331-a812-bfe3fc23af22",
+        },
+        {
+          title: "Apple Watch Series 8",
+          desc: "Zamondan oldinlang.",
+          src: "https://cdn.macbro.uz/macbro/ac4ef6b5-3e52-471b-ac2f-bfa267d85e01",
+        },
+        {
+          title: "MacBook Pro 16-inch",
+          desc: "Tarixdagi eng kuchli MacBook Pro.",
+          src: "https://cdn.macbro.uz/macbro/efdd5298-f8ab-4df9-b6b8-335062db1c97",
+        },
+        {
+          title: "iMac 24",
+          desc: "Oziga hos dizayn - sizga mos keladigan ideal.",
+          src: "https://cdn.macbro.uz/macbro/e219b7fe-e6c3-482e-a904-49fc615e4cbc",
+        },
+        {
+          title: "MacBook Air 13 M2",
+          desc: "Yangilangan Air.",
+          src: "https://cdn.macbro.uz/macbro/bf46383f-af99-48e4-b9b4-699761faf67c",
         },
       ],
     };
-  },
-  methods: {
-
   },
 };
 </script>
@@ -97,63 +93,18 @@ export default {
   width: 100%;
   background-color: #000;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   max-height: 2048px;
   min-height: 500px;
   overflow: hidden;
   position: relative;
 }
 
-.container,
-.slider {
+.container {
   height: 100%;
   position: relative;
   max-width: 100%;
   z-index: 0;
-}
-
-/* slider-indicator */
-.slider-indicator {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-bottom: 1rem;
-  z-index: 15;
-}
-
-.slider-indicator-item {
-  width: 30px;
-  height: 3px;
-  margin: 0 3px;
-  cursor: pointer;
-  box-sizing: content-box;
-  flex: 0 1 auto;
-  text-indent: -999px;
-  background-clip: padding-box;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  opacity: 0.5;
-  transition: opacity 0.6s ease;
-  position: relative;
-}
-
-.slider-indicator-item::after {
-  position: absolute;
-  content: "";
-  height: 6px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  border-radius: 3px;
-}
-
-.slider-indicator-item.active {
-  opacity: 1;
 }
 
 /* slider-inner */
@@ -162,25 +113,6 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-.slider-item {
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 100%;
-  display: none;
-  transition: transform 0.6s ease-in-out;
-}
-
-.slider-item.active {
-  display: block;
-  transform: 0;
-}
-
-.slider-item > div {
-  height: 100%;
-  padding: 0 100px;
 }
 
 .slider-item-container {
@@ -215,16 +147,17 @@ export default {
   max-width: 400px;
   margin: 0 0 6px;
   text-align: left;
+  color: #f5f5f7;
 }
 
 .hero-desc {
-  font-size: 17px;
   line-height: 25px;
   max-width: 400px;
   text-align: left;
   font-weight: 700;
-  font-size: 18pt;
+  font-size: 24px;
   margin: 1rem 0;
+  color: #f5f5f7;
 }
 
 .hero-link {
@@ -260,35 +193,83 @@ export default {
   height: 100%;
 }
 
-/* slider-prev and slider-next */
-.slider-prev,
-.slider-next {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  align-items: center;
+.slider-item-container {
+  min-height: 200px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 8px;
   display: flex;
-  justify-content: center;
-  width: 15%;
-  padding: 0;
-  text-align: center;
-  border: 0;
-  opacity: 0.5;
-  transition: opacity 0.15s ease;
-  cursor: pointer;
-}
-
-.slider-prev:hover,
-.slider-next:hover {
-  opacity: 1;
-}
-
-.slider-prev {
-  left: 0;
-}
-
-.slider-next {
-  right: 0;
+  align-items: center;
 }
 </style>
 
+
+
+<style>
+.carousel.slider-inner .carousel__viewport,
+.carousel.slider-inner .carousel__track {
+  height: 100%;
+}
+
+.carousel.slider-inner .carousel__track {
+  transition-timing-function: ease-in-out !important;
+}
+
+.carousel.slider-inner .carousel__pagination-button {
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+  padding: 0;
+  margin: 0 3px;
+}
+
+.carousel.slider-inner .carousel__pagination-button:hover {
+  background-color: transparent;
+}
+
+.carousel.slider-inner .carousel__pagination-button:hover::after {
+  background-color: #ffffff;
+}
+
+.carousel.slider-inner .carousel__pagination-button--active {
+  opacity: 0.99;
+}
+
+.carousel.slider-inner .carousel__pagination-button::after {
+  background-color: #ffffff;
+  width: 30px;
+  height: 5.5px;
+  border-radius: 3px;
+}
+
+.carousel.slider-inner .carousel__pagination {
+  margin-top: -31px;
+  z-index: 99;
+}
+
+.carousel.slider-inner .carousel__prev svg,
+.carousel.slider-inner .carousel__next svg {
+  display: none;
+}
+
+.carousel.slider-inner .carousel__next,
+.carousel.slider-inner .carousel__prev {
+  height: 100%;
+  margin: 0 7%;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+
+.carousel.slider-inner .carousel__prev {
+  background: url("../assets/slide-prev.svg") no-repeat center;
+}
+
+.carousel.slider-inner .carousel__next {
+  background: url("../assets/slide-next.svg") no-repeat center;
+}
+
+.carousel.slider-inner .carousel__next:hover,
+.carousel.slider-inner .carousel__prev:hover {
+  opacity: 1;
+}
+</style>

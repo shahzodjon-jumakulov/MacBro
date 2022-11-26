@@ -97,13 +97,19 @@
               <div class="nav-toggle" v-if="isHovered2">
                 <ul class="navbar-dropdown">
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>G'ilof va Himoya oynalari</button></router-link>
+                    <router-link to=""
+                      ><button>G'ilof va Himoya oynalari</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Zaryadlovchi qurilmalar</button></router-link>
+                    <router-link to=""
+                      ><button>Zaryadlovchi qurilmalar</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Boshqa aksessuarlar</button></router-link>
+                    <router-link to=""
+                      ><button>Boshqa aksessuarlar</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
                     <router-link to=""
@@ -111,17 +117,20 @@
                     >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Noutbuklar uchun sumkalar</button></router-link>
+                    <router-link to=""
+                      ><button>Noutbuklar uchun sumkalar</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Watch tasmalar</button></router-link>
+                    <router-link to=""
+                      ><button>Watch tasmalar</button></router-link
+                    >
                   </li>
                 </ul>
               </div>
             </span>
           </div>
         </router-link>
-        <router-link to="">Smartfonlar</router-link>
         <router-link to="">
           <div class="menu-container">
             <span
@@ -130,7 +139,7 @@
               @mouseover="isHovered3 = true"
               @mouseleave="isHovered3 = false"
             >
-              <span class="text">Samsung</span>
+              <span class="text">Smartfonlar</span>
               <svg
                 class="MuiSvgIcon-root"
                 focusable="false"
@@ -143,13 +152,52 @@
               <div class="nav-toggle" v-if="isHovered3" x-placement="bottom">
                 <ul class="navbar-dropdown">
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Galaxy Series Note</button></router-link>
+                    <router-link to=""><button>MI</button></router-link>
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Galaxy Series S</button></router-link>
+                    <router-link to=""
+                      ><button>Google Pixel</button></router-link
+                    >
+                  </li>
+                </ul>
+              </div>
+            </span>
+          </div>
+        </router-link>
+        <router-link to="">
+          <div class="menu-container">
+            <span
+              class="nav-arrow"
+              :class="{ hoveredNav: isHovered4 }"
+              @mouseover="isHovered4 = true"
+              @mouseleave="isHovered4 = false"
+            >
+              <span class="text">Samsung</span>
+              <svg
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+              </svg>
+              <div class="transparent-block" v-if="isHovered4"></div>
+              <div class="nav-toggle" v-if="isHovered4" x-placement="bottom">
+                <ul class="navbar-dropdown">
+                  <li class="nav-toggle-item">
+                    <router-link to=""
+                      ><button>Galaxy Series Note</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Galaxy Series A</button></router-link>
+                    <router-link to=""
+                      ><button>Galaxy Series S</button></router-link
+                    >
+                  </li>
+                  <li class="nav-toggle-item">
+                    <router-link to=""
+                      ><button>Galaxy Series A</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
                     <router-link to=""
@@ -157,13 +205,19 @@
                     >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Galaxy Series M</button></router-link>
+                    <router-link to=""
+                      ><button>Galaxy Series M</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Galaxy Buds</button></router-link>
+                    <router-link to=""
+                      ><button>Galaxy Buds</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Galaxy Watch</button></router-link>
+                    <router-link to=""
+                      ><button>Galaxy Watch</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
                     <router-link to=""><button>Gusto</button></router-link>
@@ -180,9 +234,9 @@
           <div class="menu-container">
             <span
               class="nav-arrow"
-              :class="{ hoveredNav: isHovered4 }"
-              @mouseover="isHovered4 = true"
-              @mouseleave="isHovered4 = false"
+              :class="{ hoveredNav: isHovered5 }"
+              @mouseover="isHovered5 = true"
+              @mouseleave="isHovered5 = false"
             >
               <span class="text">Qolganlar</span>
               <svg
@@ -193,28 +247,34 @@
               >
                 <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
               </svg>
-              <div class="transparent-block" v-if="isHovered4"></div>
-              <div class="nav-toggle" v-if="isHovered4">
+              <div class="transparent-block" v-if="isHovered5"></div>
+              <div class="nav-toggle" v-if="isHovered5">
                 <ul class="navbar-dropdown">
                   <li class="nav-toggle-item">
                     <router-link to=""><button>Xiaomi</button></router-link>
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Planshetlar</button></router-link>
-                  </li>
-                  <li class="nav-toggle-item">
-                    <router-link to=""><button>Naushniklar</button></router-link>
-                  </li>
-                  <li class="nav-toggle-item">
                     <router-link to=""
-                      ><button>Noutbuklar</button></router-link
+                      ><button>Planshetlar</button></router-link
                     >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Tugmachali telefonlar</button></router-link>
+                    <router-link to=""
+                      ><button>Naushniklar</button></router-link
+                    >
                   </li>
                   <li class="nav-toggle-item">
-                    <router-link to=""><button>Ishlatilgan gadjetlar</button></router-link>
+                    <router-link to=""><button>Noutbuklar</button></router-link>
+                  </li>
+                  <li class="nav-toggle-item">
+                    <router-link to=""
+                      ><button>Tugmachali telefonlar</button></router-link
+                    >
+                  </li>
+                  <li class="nav-toggle-item">
+                    <router-link to=""
+                      ><button>Ishlatilgan gadjetlar</button></router-link
+                    >
                   </li>
                 </ul>
               </div>
@@ -383,6 +443,7 @@ export default {
       isHovered2: false,
       isHovered3: false,
       isHovered4: false,
+      isHovered5: false,
     };
   },
 };
@@ -426,7 +487,7 @@ a {
   display: flex;
   justify-content: center;
   font-size: 14px;
-  padding: 23px 0;
+  padding: 24px 0;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -511,7 +572,8 @@ a {
   opacity: 1;
   transform: none;
   transform-origin: center top;
-  transition: opacity 321ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 214ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: opacity 321ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 214ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .nav-toggle-item button {
