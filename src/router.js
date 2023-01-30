@@ -5,7 +5,7 @@ import AppHome from "./pages/AppHome.vue"
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: AppHome },
+        { path: '/base', component: AppHome },
         {
             path: '/base',
             redirect: { name: 'Home' }
@@ -22,6 +22,7 @@ const router = createRouter({
             props: true
         }
     ],
+    base: 'sub-folder',
 });
 
 export default router
