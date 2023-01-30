@@ -7,7 +7,7 @@ const router = createRouter({
     routes: [
         { path: '/', component: AppHome },
         {
-            path: '/',
+            path: '/base',
             redirect: { name: 'Home' }
         },
         {
